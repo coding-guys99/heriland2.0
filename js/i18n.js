@@ -73,7 +73,18 @@ alertEnterShopName: "Please enter shop name",
 alertSelectCity: "Please select city",
 
 addContent: "Add Content",
-addItem: "Add Food / Attraction"
+addItem: "Add Food / Attraction",
+
+itemName: "Item Name",
+itemHeritage: "Heritage / Category",
+itemEmoji: "Emoji",
+itemShortDesc: "Short Description",
+itemDesc: "Description",
+itemTags: "Tags, separated by comma",
+saveItem: "Save Item",
+alertEnterItemName: "Please enter item name",
+submitItemSuccess: "Item submitted. It will appear after review.",
+submitItemFailed: "Failed to submit item."
   },
 
 "zh-cn": {
@@ -150,7 +161,18 @@ addItem: "Add Food / Attraction"
   alertSelectCity: "请选择城市",
   
 addContent: "新增内容",
-addItem: "新增美食 / 景点"
+addItem: "新增美食 / 景点",
+
+itemName: "项目名称",
+itemHeritage: "文化 / 分类",
+itemEmoji: "图标 Emoji",
+itemShortDesc: "简短介绍",
+itemDesc: "详细介绍",
+itemTags: "标签，用逗号分隔",
+saveItem: "保存项目",
+alertEnterItemName: "请输入项目名称",
+submitItemSuccess: "项目已提交，审核后会显示。",
+submitItemFailed: "提交项目失败。"
 },
 "zh-tw": {
   heroTag: "砂拉越 · 婆羅洲 · 馬來西亞",
@@ -226,7 +248,18 @@ addItem: "新增美食 / 景点"
   alertSelectCity: "請選擇城市",
   
 addContent: "新增內容",
-addItem: "新增美食 / 景點"
+addItem: "新增美食 / 景點",
+
+itemName: "項目名稱",
+itemHeritage: "文化 / 分類",
+itemEmoji: "圖示 Emoji",
+itemShortDesc: "簡短介紹",
+itemDesc: "詳細介紹",
+itemTags: "標籤，用逗號分隔",
+saveItem: "儲存項目",
+alertEnterItemName: "請輸入項目名稱",
+submitItemSuccess: "項目已送出，審核後會顯示。",
+submitItemFailed: "送出項目失敗。"
 },
 ms: {
   heroTag: "Sarawak · Borneo · Malaysia",
@@ -302,7 +335,18 @@ ms: {
   alertSelectCity: "Sila pilih bandar",
   
 addContent: "Tambah Kandungan",
-addItem: "Tambah Makanan / Tarikan"
+addItem: "Tambah Makanan / Tarikan",
+
+itemName: "Nama Item",
+itemHeritage: "Warisan / Kategori",
+itemEmoji: "Emoji",
+itemShortDesc: "Penerangan Ringkas",
+itemDesc: "Penerangan",
+itemTags: "Tag, pisahkan dengan koma",
+saveItem: "Simpan Item",
+alertEnterItemName: "Sila masukkan nama item",
+submitItemSuccess: "Item telah dihantar. Ia akan dipaparkan selepas semakan.",
+submitItemFailed: "Gagal menghantar item."
 }
 };
 
