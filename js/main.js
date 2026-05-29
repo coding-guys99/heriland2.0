@@ -25,6 +25,7 @@ function closeAllSheets() {
   closeMiniMap?.(true);
   closeAddShop?.(true);
   closeCreateMenu?.(true);
+  closeAddItem?.(true);
 
   unlockBodyScroll();
 }
