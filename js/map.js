@@ -11,7 +11,6 @@ function openMap(url) {
 }
 
 function openMiniMap() {
-  closeAllSheets();
   lockBodyScroll();
 
   const mapSheet = document.createElement("div");
