@@ -1,0 +1,50 @@
+.trail-filters{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+
+  overflow-x:auto;
+
+  padding-bottom:0.4rem;
+  margin-bottom:1.5rem;
+
+  scrollbar-width:none;
+}
+
+.trail-filters::-webkit-scrollbar{
+  display:none;
+}
+
+.trail-filter{
+  flex:none;
+
+  height:38px;
+
+  padding:0 1rem;
+
+  border:none;
+  border:1px solid rgba(232,168,37,0.16);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color:var(--cream2);
+
+  font-size:0.78rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.trail-filter.active{
+  background:var(--terra);
+  border-color:var(--terra);
+
+  color:#fffaf4;
+}

@@ -1,0 +1,794 @@
+/* =========================
+   MOBILE / iPhone 15 Pro Max
+   Target: 430px width
+========================= */
+
+@media (max-width: 480px) {
+
+  .top-actions {
+    top: 0.8rem;
+    right: 0.8rem;
+    gap: 0.45rem;
+  }
+
+  .top-icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .top-icon-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .hero {
+    min-height: 92svh;
+    padding-bottom: 2rem;
+  }
+
+  .hero-content {
+    padding: 0 1.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 16vw, 4.4rem);
+  }
+
+  .hero-sub {
+    max-width: 280px;
+    font-size: 0.98rem;
+  }
+
+  .hero-cta {
+    gap: 0.8rem;
+  }
+
+  .btn-primary {
+    padding: 0.78rem 1.35rem;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 2rem 1.15rem;
+  }
+
+  .map-header {
+    padding: 1.8rem 1.15rem 1rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .food-scroll {
+    padding: 1.2rem 1.15rem;
+    gap: 0.85rem;
+  }
+
+  .food-card {
+    flex: 0 0 185px;
+  }
+
+  .food-card-img {
+    height: 118px;
+    font-size: 2.7rem;
+  }
+
+  .food-card-body {
+    padding: 0.75rem;
+  }
+
+  .food-name {
+    font-size: 0.98rem;
+  }
+
+  .food-desc {
+    font-size: 0.75rem;
+  }
+
+  .trail-item {
+    padding: 1.05rem 0.35rem;
+  }
+
+  .trail-name {
+    font-size: 1rem;
+  }
+
+  .trail-meta {
+    font-size: 0.7rem;
+  }
+
+  .bottom-sheet {
+    height: 84vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .sheet-content {
+    padding: 1.25rem;
+  }
+
+  .sheet-food-image {
+    height: 155px;
+    font-size: 3.6rem;
+  }
+
+  .sheet-title {
+    font-size: 1.65rem;
+  }
+
+  .sheet-desc {
+    font-size: 0.96rem;
+  }
+
+  .recommend-list,
+  .search-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .recommend-item {
+    min-height: 128px;
+    padding: 0.75rem;
+  }
+
+  .recommend-name {
+    font-size: 0.9rem;
+  }
+
+  .recommend-note {
+    font-size: 0.72rem;
+  }
+
+.shop-menu-card {
+  width: 100%;
+  height: 84vh;
+  max-height: 84vh;
+
+  border-radius: 18px 18px 0 0;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-card {
+  width: 100%;
+  height: 84vh;
+  max-height: 84vh;
+
+  border-radius: 18px 18px 0 0;
+
+  overflow: hidden;
+}
+
+  .search-result-item {
+    min-height: 145px;
+    padding: 0.75rem;
+  }
+
+  .search-result-emoji {
+    width: 48px;
+    height: 48px;
+  }
+
+  .real-map {
+    height: calc(100vh - 56px);
+  }
+
+.shop-menu-card {
+  height: 84vh;
+  max-height: 84vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.shop-menu-card > * {
+  flex-shrink: 0;
+}
+
+.shop-menu-card {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simple-hours-time {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.simple-hours-time span {
+  display: none;
+}
+
+.simple-hours-time input {
+  width: 100%;
+}
+
+.simple-hours-time input {
+  width: 100%;
+  min-width: 0;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+}
+
+/* =========================
+   IPAD PORTRAIT
+   768px - 1024px
+========================= */
+
+@media
+(min-width: 768px)
+and (max-width: 1024px)
+and (orientation: portrait) {
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  .hero-content,
+  section,
+  .map-header,
+  .food-scroll {
+    max-width: 860px;
+  }
+
+  .hero-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+
+  .map-header {
+    padding: 3rem 2rem 1.2rem;
+  }
+
+  /* =========================
+     TOP ACTIONS
+  ========================= */
+
+  .top-actions {
+    top: 1.2rem;
+    right: 1.2rem;
+    gap: 0.65rem;
+  }
+
+  .top-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .top-icon-btn svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    min-height: 88svh;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(4.2rem, 12vw, 6.8rem);
+  }
+
+  .hero-sub {
+    max-width: 420px;
+    font-size: 1.12rem;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  /* =========================
+     MAP
+  ========================= */
+
+  .map-container {
+    max-width: 860px;
+    height: 390px;
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .map-svg {
+    padding: 1.5rem;
+  }
+
+  /* =========================
+     FOOD SCROLL
+  ========================= */
+
+  .food-scroll {
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+  }
+
+  .food-card {
+    flex: 0 0 240px;
+  }
+
+  .food-card-img {
+    height: 155px;
+    font-size: 3.4rem;
+  }
+
+  .food-card-body {
+    padding: 0.95rem;
+  }
+
+  .food-name {
+    font-size: 1.08rem;
+  }
+
+  /* =========================
+     FILTER
+  ========================= */
+
+.trail-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.trail-filters {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.7rem;
+
+  overflow-x: auto;
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.trail-add-btn {
+  flex: none;
+
+  width: 40px;
+  height: 40px;
+
+  margin: 0;
+}
+
+  /* =========================
+     LIST
+  ========================= */
+
+  .trail-list {
+    display: grid;
+    grid-template-columns:
+      repeat(1, minmax(0,1fr));
+
+    gap: 0 1rem;
+  }
+
+  .trail-item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* =========================
+     FOOD DETAIL SHEET
+  ========================= */
+
+  .bottom-sheet {
+    left: 50%;
+    right: auto;
+
+    width: min(680px, calc(100% - 2rem));
+    height: 82vh;
+
+    border-radius: 24px 24px 0 0;
+
+    transform: translate(-50%, 100%);
+  }
+
+  .bottom-sheet.active {
+    transform: translate(-50%, 0);
+  }
+
+  .sheet-content {
+    padding: 1.6rem;
+  }
+
+  .sheet-food-image {
+    height: 220px;
+    font-size: 5rem;
+  }
+
+  /* =========================
+     RECOMMEND SHOPS
+  ========================= */
+
+  .recommend-list {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap: 0.8rem;
+  }
+
+  .recommend-item {
+    min-height: 145px;
+  }
+
+  /* =========================
+     SHOP / SEARCH / FEEDBACK
+  ========================= */
+
+  .shop-menu {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .shop-menu-card,
+  .search-card {
+    width: min(620px, calc(100% - 2rem));
+    max-width: 620px;
+
+    height: 82vh;
+    max-height: 82vh;
+
+    border-radius: 24px 24px 0 0;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .search-card {
+    overflow: hidden;
+  }
+
+  /* =========================
+     SEARCH
+  ========================= */
+
+  .search-results {
+    flex: 1;
+
+    overflow-y: auto;
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap: 0.8rem;
+  }
+
+  .search-result-item {
+    min-height: 165px;
+  }
+
+  .search-result-emoji {
+    width: 56px;
+    height: 56px;
+
+    font-size: 1.9rem;
+  }
+
+  /* =========================
+     OPENING HOURS
+  ========================= */
+
+  .simple-hours-time {
+    grid-template-columns:
+      1fr auto 1fr;
+  }
+
+  .simple-hours-time span {
+    display: block;
+  }
+
+.simple-hours-time input {
+  width: 100%;
+}
+
+.simple-hours-time input {
+  width: 100%;
+  min-width: 0;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+  /* =========================
+     REAL MAP
+  ========================= */
+
+  .real-map {
+    height: calc(100vh - 64px);
+  }
+}
+
+/* =========================
+   IPAD LANDSCAPE
+   1024px - 1366px
+========================= */
+
+@media
+(min-width: 1024px)
+and (max-width: 1366px)
+and (orientation: landscape) {
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  .hero-content,
+  section,
+  .map-header {
+    max-width: 1180px;
+  }
+
+  section {
+    padding: 3.2rem 2.4rem;
+  }
+
+  .hero-content {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    min-height: 92svh;
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 8vw, 7rem);
+  }
+
+  .hero-sub {
+    max-width: 520px;
+    font-size: 1.12rem;
+  }
+
+  /* =========================
+     MAP
+  ========================= */
+
+  .map-container {
+    max-width: 1180px;
+    height: 440px;
+
+    margin: 0 auto;
+
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  /* =========================
+     FOOD CARDS
+  ========================= */
+
+  .food-scroll {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0,1fr));
+
+    gap: 1rem;
+
+    overflow: visible;
+
+    padding: 1.6rem 2.4rem;
+  }
+
+  .food-card {
+    width: 100%;
+  }
+
+  .food-card-img {
+    height: 190px;
+    font-size: 3.8rem;
+  }
+
+  /* =========================
+     FILTER
+  ========================= */
+
+.trail-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.trail-filters {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.7rem;
+
+  overflow-x: auto;
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.trail-add-btn {
+  flex: none;
+
+  width: 42px;
+  height: 42px;
+
+  margin: 0;
+}
+
+  /* =========================
+     LIST
+  ========================= */
+
+  .trail-list {
+    display: grid;
+
+    grid-template-columns:
+      repeat(1, minmax(0,1fr));
+
+    gap: 0 1.2rem;
+  }
+
+  /* =========================
+     FOOD SHEET
+  ========================= */
+
+  .bottom-sheet {
+    left: 50%;
+    right: auto;
+
+    width: min(780px, calc(100% - 2rem));
+    height: 84vh;
+
+    border-radius: 24px 24px 0 0;
+
+    transform: translate(-50%, 100%);
+  }
+
+  .bottom-sheet.active {
+    transform: translate(-50%, 0);
+  }
+
+  .sheet-content {
+    padding: 1.8rem;
+  }
+
+  .sheet-food-image {
+    height: 260px;
+    font-size: 5.4rem;
+  }
+
+  /* =========================
+     RECOMMEND
+  ========================= */
+
+  .recommend-list {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap: 0.9rem;
+  }
+
+  .recommend-item {
+    min-height: 150px;
+  }
+
+  /* =========================
+     SHOP / SEARCH / FEEDBACK
+  ========================= */
+
+  .shop-menu {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .shop-menu-card,
+  .search-card {
+    width: min(760px, calc(100% - 2rem));
+
+    height: 84vh;
+    max-height: 84vh;
+
+    border-radius: 24px 24px 0 0;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .search-card {
+    overflow: hidden;
+  }
+
+  /* =========================
+     SEARCH
+  ========================= */
+
+  .search-results {
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0,1fr));
+
+    gap: 0.8rem;
+  }
+
+  .search-result-item {
+    min-height: 170px;
+  }
+
+  /* =========================
+     OPENING HOURS
+  ========================= */
+
+  .simple-hours-time {
+    grid-template-columns:
+      1fr auto 1fr;
+  }
+
+  .simple-hours-time span {
+    display: block;
+  }
+
+.simple-hours-time input {
+  width: 100%;
+}
+
+.simple-hours-time input {
+  width: 100%;
+  min-width: 0;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+  /* =========================
+     REAL MAP
+  ========================= */
+
+  .real-map {
+    height: calc(100vh - 72px);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .food-card {
+    flex: 0 0 210px;
+  }
+
+  .map-container {
+    height: 330px;
+  }
+
+  .bottom-sheet,
+  .shop-menu-card,
+  .search-card {
+    height: 84vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -1,0 +1,193 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 2.5rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 20%, #2d4a2d55 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, #c84b2f22 0%, transparent 60%),
+    linear-gradient(180deg, #0d0a05 0%, #1a1208 40%, #2a1e0f 100%);
+}
+
+.pua-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--terra) 0px,
+    var(--terra) 8px,
+    var(--gold) 8px,
+    var(--gold) 14px,
+    var(--bark) 14px,
+    var(--bark) 18px,
+    var(--gold) 18px,
+    var(--gold) 24px,
+    var(--terra) 24px,
+    var(--terra) 32px,
+    #8b1a0a 32px,
+    #8b1a0a 36px
+  );
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(45deg, var(--terra) 0, var(--terra) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size: 20px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.5rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.3em 0.8em;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 12vw, 5rem);
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.hero-title em {
+  display: block;
+  color: var(--terra);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--cream2);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 300px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+.btn-primary {
+  background: var(--terra);
+  color: var(--cream);
+  border: none;
+  padding: 0.85rem 1.8rem;
+  font-family: "Crimson Pro", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(0);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--cream2);
+  opacity: 0.6;
+}
+
+.scroll-line {
+  width: 30px;
+  height: 1px;
+  background: var(--cream2);
+}
+
+.food-orb {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(232,168,37,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  opacity: 0;
+  animation: floatIn 1s forwards, float 6s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 70px;
+  height: 70px;
+  top: 12%;
+  right: 8%;
+  animation-delay: 1s, 1s;
+  background: radial-gradient(circle, #2d4a2d88, transparent);
+}
+
+.orb2 {
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  right: 22%;
+  animation-delay: 1.3s, 1.3s;
+  background: radial-gradient(circle, #c84b2f44, transparent);
+}
+
+.orb3 {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  right: 5%;
+  animation-delay: 1.6s, 1.6s;
+  background: radial-gradient(circle, #e8a82544, transparent);
+}
