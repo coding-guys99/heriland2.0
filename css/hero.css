@@ -191,3 +191,82 @@
   animation-delay: 1.6s, 1.6s;
   background: radial-gradient(circle, #e8a82544, transparent);
 }
+
+.map-container{
+  position:relative;
+
+  min-height:560px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 60% 50%,
+      rgba(232,168,37,0.08),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(84,110,84,0.18),
+      transparent 55%
+    ),
+
+    linear-gradient(
+      135deg,
+      #0e120d,
+      #15110c
+    );
+}
+
+.sarawak-map-img{
+  width:min(92%, 1200px);
+
+  position:relative;
+  z-index:2;
+
+  filter:
+    drop-shadow(0 0 24px rgba(232,168,37,0.22))
+    drop-shadow(0 18px 55px rgba(0,0,0,0.5));
+
+  animation:
+    mapFloat 8s ease-in-out infinite;
+}
+
+.map-glow{
+  position:absolute;
+
+  width:65vw;
+  height:65vw;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232,168,37,0.08),
+      transparent 68%
+    );
+
+  filter:blur(40px);
+
+  z-index:1;
+}
+
+@keyframes mapFloat{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
