@@ -70,7 +70,10 @@ filter_other: "Other",
 
 hoursNotSet: "Hours not set",
 alertEnterShopName: "Please enter shop name",
-alertSelectCity: "Please select city"
+alertSelectCity: "Please select city",
+
+addContent: "Add Content",
+addItem: "Add Food / Attraction"
   },
 
 "zh-cn": {
@@ -144,7 +147,10 @@ alertSelectCity: "Please select city"
 
   hoursNotSet: "尚未设置营业时间",
   alertEnterShopName: "请输入店家名称",
-  alertSelectCity: "请选择城市"
+  alertSelectCity: "请选择城市",
+  
+addContent: "新增内容",
+addItem: "新增美食 / 景点"
 },
 "zh-tw": {
   heroTag: "砂拉越 · 婆羅洲 · 馬來西亞",
@@ -217,7 +223,10 @@ alertSelectCity: "Please select city"
 
   hoursNotSet: "尚未設定營業時間",
   alertEnterShopName: "請輸入店家名稱",
-  alertSelectCity: "請選擇城市"
+  alertSelectCity: "請選擇城市",
+  
+addContent: "新增內容",
+addItem: "新增美食 / 景點"
 },
 ms: {
   heroTag: "Sarawak · Borneo · Malaysia",
@@ -290,7 +299,10 @@ ms: {
 
   hoursNotSet: "Waktu belum ditetapkan",
   alertEnterShopName: "Sila masukkan nama kedai",
-  alertSelectCity: "Sila pilih bandar"
+  alertSelectCity: "Sila pilih bandar",
+  
+addContent: "Tambah Kandungan",
+addItem: "Tambah Makanan / Tarikan"
 }
 };
 
