@@ -155,11 +155,17 @@ body.theme-light .pagination button {
   color: var(--cream);
 }
 
-body.theme-light .weather-box {
+body.theme-light .weather-main {
   background: rgba(255,255,255,0.58);
-
-  border-color:
-    rgba(141,116,64,0.16);
-
+  border-color: rgba(141,116,64,0.16);
   color: var(--cream);
+}
+
+body.theme-light .weather-dropdown {
+  background: rgba(247,242,234,0.96);
+  border-color: rgba(141,116,64,0.18);
+}
+
+body.theme-light .weather-dropdown button {
+  color: var(--cream2);
 }
