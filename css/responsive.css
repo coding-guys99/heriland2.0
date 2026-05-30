@@ -1,10 +1,8 @@
 /* =========================
    MOBILE / iPhone 15 Pro Max
-   Target: 430px width
 ========================= */
 
 @media (max-width: 480px) {
-
   .top-actions {
     top: 0.8rem;
     right: 0.8rem;
@@ -39,10 +37,6 @@
     font-size: 0.98rem;
   }
 
-  .hero-cta {
-    gap: 0.8rem;
-  }
-
   .btn-primary {
     padding: 0.78rem 1.35rem;
     font-size: 0.95rem;
@@ -52,13 +46,78 @@
     padding: 2rem 1.15rem;
   }
 
-  .map-header {
-    padding: 1.8rem 1.15rem 1rem;
+  /* NEW PNG MAP */
+  .map-section {
+    padding: 3rem 1.15rem 2rem;
   }
 
   .map-container {
-    height: 300px;
+    min-height: 620px;
+    border-radius: 22px;
   }
+
+  .map-copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 2rem 1.5rem 0;
+    max-width: none;
+  }
+
+  .map-copy .section-label {
+    margin-bottom: 1.1rem;
+  }
+
+  .map-title {
+    font-size: clamp(3rem, 13vw, 4.2rem);
+  }
+
+  .map-desc {
+    max-width: 260px;
+    font-size: 0.92rem;
+  }
+
+  .sarawak-map-img {
+    width: 118%;
+    right: -18%;
+    top: auto;
+    bottom: -2%;
+    transform: none;
+  }
+
+  .map-glow {
+    width: 520px;
+    height: 520px;
+    right: -40%;
+    top: auto;
+    bottom: -18%;
+    transform: none;
+  }
+
+  .map-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(10,10,10,0.35),
+      transparent 38%
+    );
+  }
+
+  .map-pin {
+    font-size: 0.72rem;
+  }
+
+  .map-pin span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .kuching { left: 12%; bottom: 23%; }
+  .sibu { left: 42%; bottom: 34%; }
+  .mukah { left: 45%; top: 55%; }
+  .bintulu { left: 60%; top: 50%; }
+  .miri { right: 18%; top: 42%; }
+  .limbang { right: 7%; top: 35%; }
+  .lawas { right: 3%; top: 27%; }
 
   .food-scroll {
     padding: 1.2rem 1.15rem;
@@ -74,28 +133,8 @@
     font-size: 2.7rem;
   }
 
-  .food-card-body {
-    padding: 0.75rem;
-  }
-
-  .food-name {
-    font-size: 0.98rem;
-  }
-
-  .food-desc {
-    font-size: 0.75rem;
-  }
-
   .trail-item {
     padding: 1.05rem 0.35rem;
-  }
-
-  .trail-name {
-    font-size: 1rem;
-  }
-
-  .trail-meta {
-    font-size: 0.7rem;
   }
 
   .bottom-sheet {
@@ -112,14 +151,6 @@
     font-size: 3.6rem;
   }
 
-  .sheet-title {
-    font-size: 1.65rem;
-  }
-
-  .sheet-desc {
-    font-size: 0.96rem;
-  }
-
   .recommend-list,
   .search-results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -131,147 +162,89 @@
     padding: 0.75rem;
   }
 
-  .recommend-name {
-    font-size: 0.9rem;
+  .shop-menu-card {
+    width: 100%;
+    height: 84vh;
+    max-height: 84vh;
+    border-radius: 18px 18px 0 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .recommend-note {
-    font-size: 0.72rem;
+  .search-card {
+    width: 100%;
+    height: 84vh;
+    max-height: 84vh;
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
   }
 
-.shop-menu-card {
-  width: 100%;
-  height: 84vh;
-  max-height: 84vh;
-
-  border-radius: 18px 18px 0 0;
-
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.search-card {
-  width: 100%;
-  height: 84vh;
-  max-height: 84vh;
-
-  border-radius: 18px 18px 0 0;
-
-  overflow: hidden;
-}
-
-  .search-result-item {
-    min-height: 145px;
-    padding: 0.75rem;
+  .simple-hours-time {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
-  .search-result-emoji {
-    width: 48px;
-    height: 48px;
+  .simple-hours-time span {
+    display: none;
+  }
+
+  .simple-hours-time input {
+    width: 100%;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .real-map {
     height: calc(100vh - 56px);
   }
-
-.shop-menu-card {
-  height: 84vh;
-  max-height: 84vh;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
 }
 
-.shop-menu-card > * {
-  flex-shrink: 0;
-}
+/* =========================
+   SMALL TABLET / LARGE PHONE
+========================= */
 
-.shop-menu-card {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
+@media (min-width: 481px) and (max-width: 767px) {
+  .map-container {
+    min-height: 660px;
+  }
 
-.simple-hours-time {
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-}
+  .sarawak-map-img {
+    width: 105%;
+    right: -12%;
+    top: auto;
+    bottom: -4%;
+    transform: none;
+  }
 
-.simple-hours-time span {
-  display: none;
-}
+  .food-card {
+    flex: 0 0 210px;
+  }
 
-.simple-hours-time input {
-  width: 100%;
-}
-
-.simple-hours-time input {
-  width: 100%;
-  min-width: 0;
-
-  padding-left: 0;
-  padding-right: 0;
-}
+  .bottom-sheet,
+  .shop-menu-card,
+  .search-card {
+    height: 84vh;
+  }
 }
 
 /* =========================
    IPAD PORTRAIT
-   768px - 1024px
 ========================= */
 
 @media
 (min-width: 768px)
 and (max-width: 1024px)
 and (orientation: portrait) {
-
-  /* =========================
-     LAYOUT
-  ========================= */
-
   .hero-content,
   section,
-  .map-header,
   .food-scroll {
     max-width: 860px;
-  }
-
-  .hero-content {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   section {
     padding: 3rem 2rem;
   }
-
-  .map-header {
-    padding: 3rem 2rem 1.2rem;
-  }
-
-  /* =========================
-     TOP ACTIONS
-  ========================= */
-
-  .top-actions {
-    top: 1.2rem;
-    right: 1.2rem;
-    gap: 0.65rem;
-  }
-
-  .top-icon-btn {
-    width: 44px;
-    height: 44px;
-  }
-
-  .top-icon-btn svg {
-    width: 19px;
-    height: 19px;
-  }
-
-  /* =========================
-     HERO
-  ========================= */
 
   .hero {
     min-height: 88svh;
@@ -287,30 +260,45 @@ and (orientation: portrait) {
     font-size: 1.12rem;
   }
 
-  .btn-primary {
-    padding: 0.9rem 1.6rem;
-    font-size: 1rem;
+  .map-section {
+    padding: 4rem 2rem 3rem;
   }
-
-  /* =========================
-     MAP
-  ========================= */
 
   .map-container {
-    max-width: 860px;
-    height: 390px;
-    margin: 0 auto;
-    border-radius: 22px;
-    overflow: hidden;
+    min-height: 760px;
+    border-radius: 26px;
   }
 
-  .map-svg {
-    padding: 1.5rem;
+  .map-copy {
+    left: 2.4rem;
+    top: 3rem;
+    max-width: 300px;
   }
 
-  /* =========================
-     FOOD SCROLL
-  ========================= */
+  .map-title {
+    font-size: 4.4rem;
+  }
+
+  .map-desc {
+    font-size: 0.96rem;
+  }
+
+  .sarawak-map-img {
+    width: 96%;
+    right: -6%;
+    top: auto;
+    bottom: -2%;
+    transform: none;
+  }
+
+  .map-glow {
+    width: 700px;
+    height: 700px;
+    right: -22%;
+    top: auto;
+    bottom: -12%;
+    transform: none;
+  }
 
   .food-scroll {
     padding: 1.5rem 2rem;
@@ -326,78 +314,42 @@ and (orientation: portrait) {
     font-size: 3.4rem;
   }
 
-  .food-card-body {
-    padding: 0.95rem;
+  .trail-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  .food-name {
-    font-size: 1.08rem;
+  .trail-filters {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    overflow-x: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  /* =========================
-     FILTER
-  ========================= */
-
-.trail-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.trail-filters {
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-
-  gap: 0.7rem;
-
-  overflow-x: auto;
-
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.trail-add-btn {
-  flex: none;
-
-  width: 40px;
-  height: 40px;
-
-  margin: 0;
-}
-
-  /* =========================
-     LIST
-  ========================= */
+  .trail-add-btn {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
 
   .trail-list {
     display: grid;
-    grid-template-columns:
-      repeat(1, minmax(0,1fr));
-
+    grid-template-columns: repeat(1, minmax(0,1fr));
     gap: 0 1rem;
   }
-
-  .trail-item {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  /* =========================
-     FOOD DETAIL SHEET
-  ========================= */
 
   .bottom-sheet {
     left: 50%;
     right: auto;
-
     width: min(680px, calc(100% - 2rem));
     height: 82vh;
-
     border-radius: 24px 24px 0 0;
-
     transform: translate(-50%, 100%);
   }
 
@@ -414,24 +366,10 @@ and (orientation: portrait) {
     font-size: 5rem;
   }
 
-  /* =========================
-     RECOMMEND SHOPS
-  ========================= */
-
   .recommend-list {
-    grid-template-columns:
-      repeat(2, minmax(0,1fr));
-
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 0.8rem;
   }
-
-  .recommend-item {
-    min-height: 145px;
-  }
-
-  /* =========================
-     SHOP / SEARCH / FEEDBACK
-  ========================= */
 
   .shop-menu {
     justify-content: center;
@@ -442,12 +380,9 @@ and (orientation: portrait) {
   .search-card {
     width: min(620px, calc(100% - 2rem));
     max-width: 620px;
-
     height: 82vh;
     max-height: 82vh;
-
     border-radius: 24px 24px 0 0;
-
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -456,60 +391,12 @@ and (orientation: portrait) {
     overflow: hidden;
   }
 
-  /* =========================
-     SEARCH
-  ========================= */
-
   .search-results {
     flex: 1;
-
     overflow-y: auto;
-
-    grid-template-columns:
-      repeat(2, minmax(0,1fr));
-
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 0.8rem;
   }
-
-  .search-result-item {
-    min-height: 165px;
-  }
-
-  .search-result-emoji {
-    width: 56px;
-    height: 56px;
-
-    font-size: 1.9rem;
-  }
-
-  /* =========================
-     OPENING HOURS
-  ========================= */
-
-  .simple-hours-time {
-    grid-template-columns:
-      1fr auto 1fr;
-  }
-
-  .simple-hours-time span {
-    display: block;
-  }
-
-.simple-hours-time input {
-  width: 100%;
-}
-
-.simple-hours-time input {
-  width: 100%;
-  min-width: 0;
-
-  padding-left: 0;
-  padding-right: 0;
-}
-
-  /* =========================
-     REAL MAP
-  ========================= */
 
   .real-map {
     height: calc(100vh - 64px);
@@ -518,36 +405,20 @@ and (orientation: portrait) {
 
 /* =========================
    IPAD LANDSCAPE
-   1024px - 1366px
 ========================= */
 
 @media
 (min-width: 1024px)
 and (max-width: 1366px)
 and (orientation: landscape) {
-
-  /* =========================
-     LAYOUT
-  ========================= */
-
   .hero-content,
-  section,
-  .map-header {
+  section {
     max-width: 1180px;
   }
 
   section {
     padding: 3.2rem 2.4rem;
   }
-
-  .hero-content {
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
-  }
-
-  /* =========================
-     HERO
-  ========================= */
 
   .hero {
     min-height: 92svh;
@@ -562,34 +433,39 @@ and (orientation: landscape) {
     font-size: 1.12rem;
   }
 
-  /* =========================
-     MAP
-  ========================= */
-
-  .map-container {
-    max-width: 1180px;
-    height: 440px;
-
-    margin: 0 auto;
-
-    border-radius: 24px;
-    overflow: hidden;
+  .map-section {
+    padding: 4rem 2.4rem 3rem;
   }
 
-  /* =========================
-     FOOD CARDS
-  ========================= */
+  .map-container {
+    min-height: 760px;
+    border-radius: 28px;
+  }
+
+  .map-copy {
+    left: 3rem;
+    top: 4rem;
+  }
+
+  .map-title {
+    font-size: 5rem;
+  }
+
+  .sarawak-map-img {
+    width: 82%;
+    right: -2%;
+  }
+
+  .map-glow {
+    width: 820px;
+    height: 820px;
+  }
 
   .food-scroll {
     display: grid;
-
-    grid-template-columns:
-      repeat(3, minmax(0,1fr));
-
+    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 1rem;
-
     overflow: visible;
-
     padding: 1.6rem 2.4rem;
   }
 
@@ -602,66 +478,36 @@ and (orientation: landscape) {
     font-size: 3.8rem;
   }
 
-  /* =========================
-     FILTER
-  ========================= */
-
-.trail-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.trail-filters {
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-
-  gap: 0.7rem;
-
-  overflow-x: auto;
-
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.trail-add-btn {
-  flex: none;
-
-  width: 42px;
-  height: 42px;
-
-  margin: 0;
-}
-
-  /* =========================
-     LIST
-  ========================= */
-
-  .trail-list {
-    display: grid;
-
-    grid-template-columns:
-      repeat(1, minmax(0,1fr));
-
-    gap: 0 1.2rem;
+  .trail-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  /* =========================
-     FOOD SHEET
-  ========================= */
+  .trail-filters {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    overflow-x: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .trail-add-btn {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+  }
 
   .bottom-sheet {
     left: 50%;
     right: auto;
-
     width: min(780px, calc(100% - 2rem));
     height: 84vh;
-
     border-radius: 24px 24px 0 0;
-
     transform: translate(-50%, 100%);
   }
 
@@ -678,24 +524,10 @@ and (orientation: landscape) {
     font-size: 5.4rem;
   }
 
-  /* =========================
-     RECOMMEND
-  ========================= */
-
   .recommend-list {
-    grid-template-columns:
-      repeat(2, minmax(0,1fr));
-
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 0.9rem;
   }
-
-  .recommend-item {
-    min-height: 150px;
-  }
-
-  /* =========================
-     SHOP / SEARCH / FEEDBACK
-  ========================= */
 
   .shop-menu {
     justify-content: center;
@@ -705,14 +537,10 @@ and (orientation: landscape) {
   .shop-menu-card,
   .search-card {
     width: min(760px, calc(100% - 2rem));
-
     height: 84vh;
     max-height: 84vh;
-
     border-radius: 24px 24px 0 0;
-
     overflow-y: auto;
-
     -webkit-overflow-scrolling: touch;
   }
 
@@ -720,75 +548,15 @@ and (orientation: landscape) {
     overflow: hidden;
   }
 
-  /* =========================
-     SEARCH
-  ========================= */
-
   .search-results {
     flex: 1;
-
     overflow-y: auto;
-
     display: grid;
-
-    grid-template-columns:
-      repeat(3, minmax(0,1fr));
-
+    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 0.8rem;
   }
 
-  .search-result-item {
-    min-height: 170px;
-  }
-
-  /* =========================
-     OPENING HOURS
-  ========================= */
-
-  .simple-hours-time {
-    grid-template-columns:
-      1fr auto 1fr;
-  }
-
-  .simple-hours-time span {
-    display: block;
-  }
-
-.simple-hours-time input {
-  width: 100%;
-}
-
-.simple-hours-time input {
-  width: 100%;
-  min-width: 0;
-
-  padding-left: 0;
-  padding-right: 0;
-}
-
-  /* =========================
-     REAL MAP
-  ========================= */
-
   .real-map {
     height: calc(100vh - 72px);
-  }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .food-card {
-    flex: 0 0 210px;
-  }
-
-  .map-container {
-    height: 330px;
-  }
-
-  .bottom-sheet,
-  .shop-menu-card,
-  .search-card {
-    height: 84vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
