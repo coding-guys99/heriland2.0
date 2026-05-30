@@ -1,18 +1,16 @@
 async function loadWeather(city = "Kuching") {
 
-  const API_KEY = "2bf2a548cb076cf7ea251d5cc6d4d8db";
+  const API_KEY = "你的APIKEY";
 
-  const url = `
-    https://api.openweathermap.org/data/2.5/weather
-    ?q=${city},MY
-    &units=metric
-    &appid=${API_KEY}
-  `;
+  const url =
+    `https://api.openweathermap.org/data/2.5/weather?q=${city},MY&units=metric&appid=${API_KEY}`;
 
   try {
 
     const res = await fetch(url);
     const data = await res.json();
+
+    console.log(data);
 
     const temp =
       Math.round(data.main.temp);
@@ -24,7 +22,7 @@ async function loadWeather(city = "Kuching") {
 
   } catch (err) {
 
-    console.error(err);
+    console.error("Weather error:", err);
   }
 }
 
