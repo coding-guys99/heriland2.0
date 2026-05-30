@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 function lockBodyScroll() {
+  document.documentElement.classList.add("no-scroll");
   document.body.classList.add("no-scroll");
 }
 
 function unlockBodyScroll() {
+  document.documentElement.classList.remove("no-scroll");
   document.body.classList.remove("no-scroll");
 }
 
