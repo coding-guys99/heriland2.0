@@ -192,3 +192,41 @@
   background: radial-gradient(circle, #e8a82544, transparent);
 }
 
+.weather-box {
+  position: fixed;
+
+  top: 1rem;
+  left: 1rem;
+
+  z-index: 200;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.1rem;
+
+  padding: 0.75rem 0.9rem;
+
+  background: rgba(12,10,6,0.42);
+
+  border: 1px solid rgba(232,168,37,0.14);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: var(--cream);
+}
+
+.weather-temp {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.weather-city {
+  font-size: 0.68rem;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--gold);
+}
