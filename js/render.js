@@ -120,7 +120,46 @@ function itemMatchesFilter(item) {
   );
 }
 
+function injectAds(items) {
+  const result = [];
+
+  items.forEach(item => {
+    result.push({
+      type: "item",
+      data: item
+    });
+
+    if (Math.random() < 0.18) {
+      const randomAd =
+        ads[Math.floor(Math.random() * ads.length)];
+
+      result.push({
+        type: "ad",
+        data: randomAd
+      });
+    }
+  });
+
+  return result;
+}
+
 function renderTrailList() {
+  
+  if (entry.type === "ad") {
+  const ad = entry.data;
+
+  return `
+    <li class="trail-ad-card fade-in">
+      <div class="trail-ad-badge">Sponsored</div>
+      <div class="trail-ad-emoji">${ad.image}</div>
+      <div class="trail-ad-title">${ad.title}</div>
+      <div class="trail-ad-desc">${ad.desc}</div>
+    </li>
+  `;
+}
+
+const item = entry.data;
+
   const trailList = document.getElementById("trail-list");
   if (!trailList) return;
 
@@ -129,7 +168,9 @@ const filteredItems = foods.filter(itemMatchesFilter);
 const start = (currentPage - 1) * itemsPerPage;
 const pagedItems = filteredItems.slice(start, start + itemsPerPage);
 
-  trailList.innerHTML = pagedItems.map((item, index) => {
+const mixedItems = injectAds(pagedItems);
+
+  trailList.innerHTML = mixedItems.map((entry, index) => {
     const realIndex = foods.indexOf(item);
 
     return `
