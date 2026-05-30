@@ -88,11 +88,21 @@ function openAddShop() {
 
       <select id="shop-parent">
 
-        ${foods.map((item, index) => `
-          <option value="${index}">
-            ${item.name}
-          </option>
-        `).join("")}
+${foods
+  .map((item, index) => ({
+    ...item,
+    originalIndex: index
+  }))
+  .sort((a, b) =>
+    a.name.localeCompare(b.name)
+  )
+  .map(item => `
+    <option value="${item.originalIndex}">
+      ${item.name}
+    </option>
+  `)
+  .join("")
+}
 
       </select>
 
