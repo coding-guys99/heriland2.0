@@ -138,7 +138,7 @@ const pagedItems = filteredItems.slice(start, start + itemsPerPage);
         onclick="openSheet(${realIndex})"
         style="animation-delay:${index * 0.05}s"
       >
-        <span class="trail-num">${String(index + 1).padStart(2, "0")}</span>
+        <span class="trail-num">${String(start + index + 1).padStart(2, "0")}</span>
 
         <div class="trail-info">
           <div class="trail-name">${item.name}</div>
