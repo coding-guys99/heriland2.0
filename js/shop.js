@@ -96,33 +96,53 @@ function openAddShop() {
 
       </select>
 
-      <select id="shop-category">
+<select id="shop-category">
 
-        <option value="Restaurant">
-          ${t("filter_restaurant")}
-        </option>
+  <option value="Restaurant">
+    ${t("filter_restaurant")}
+  </option>
 
-        <option value="Cafe">
-          ${t("filter_cafe")}
-        </option>
+  <option value="Cafe">
+    ${t("filter_cafe")}
+  </option>
 
-        <option value="Hawker Stall">
-          ${t("filter_hawker_stall")}
-        </option>
+  <option value="Kopitiam">
+    ${t("category_kopitiam")}
+  </option>
 
-        <option value="Food Court">
-          ${t("filter_food_court")}
-        </option>
+  <option value="Hawker Stall">
+    ${t("filter_hawker_stall")}
+  </option>
 
-        <option value="Market">
-          ${t("filter_market")}
-        </option>
+  <option value="Food Court">
+    ${t("filter_food_court")}
+  </option>
 
-        <option value="Other">
-          ${t("filter_other")}
-        </option>
+  <option value="Market">
+    ${t("filter_market")}
+  </option>
 
-      </select>
+  <option value="Florist">
+    ${t("category_florist")}
+  </option>
+
+  <option value="Supermarket">
+    ${t("category_supermarket")}
+  </option>
+
+  <option value="Pharmacy">
+    ${t("category_pharmacy")}
+  </option>
+
+  <option value="Bakery">
+    ${t("category_bakery")}
+  </option>
+
+  <option value="Other">
+    ${t("filter_other")}
+  </option>
+
+</select>
 
       <input
         id="shop-name"
@@ -287,11 +307,11 @@ async function saveShop() {
 
   if (error) {
     console.error("Save shop error:", error);
-    alert("Failed to submit shop.");
+    alert(t("submitShopFailed"));
     return;
   }
 
-  alert("Shop submitted. It will appear after review.");
+  alert(t("submitShopSuccess"));
 
   closeAddShop();
 
