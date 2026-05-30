@@ -51,48 +51,46 @@
     padding: 3rem 1.15rem 2rem;
   }
 
-  .map-container {
-    min-height: 620px;
-    border-radius: 22px;
-  }
+.map-container {
+  min-height: 520px;
+  border-radius: 22px;
+}
 
-  .map-copy {
-    position: relative;
-    left: auto;
-    top: auto;
-    padding: 2rem 1.5rem 0;
-    max-width: none;
-  }
+.map-copy {
+  position: relative;
+  left: auto;
+  top: auto;
+  padding: 2rem 1.5rem 0;
+  max-width: none;
+}
 
-  .map-copy .section-label {
-    margin-bottom: 1.1rem;
-  }
+.map-title {
+  font-size: clamp(2.8rem, 12vw, 3.8rem);
+}
 
-  .map-title {
-    font-size: clamp(3rem, 13vw, 4.2rem);
-  }
+.map-desc {
+  max-width: 280px;
+  font-size: 0.9rem;
+}
 
-  .map-desc {
-    max-width: 260px;
-    font-size: 0.92rem;
-  }
+.sarawak-map-img {
+  width: 96%;
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+}
 
-  .sarawak-map-img {
-    width: 118%;
-    right: -18%;
-    top: auto;
-    bottom: -2%;
-    transform: none;
-  }
-
-  .map-glow {
-    width: 520px;
-    height: 520px;
-    right: -40%;
-    top: auto;
-    bottom: -18%;
-    transform: none;
-  }
+.map-glow {
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: -4rem;
+  transform: translateX(-50%);
+}
 
   .map-overlay {
     background: linear-gradient(
@@ -103,6 +101,7 @@
   }
 
   .map-pin {
+    display: none;
     font-size: 0.72rem;
   }
 
