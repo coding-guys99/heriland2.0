@@ -84,7 +84,33 @@ itemTags: "Tags, separated by comma",
 saveItem: "Save Item",
 alertEnterItemName: "Please enter item name",
 submitItemSuccess: "Item submitted. It will appear after review.",
-submitItemFailed: "Failed to submit item."
+submitItemFailed: "Failed to submit item.",
+
+/* =========================
+   ENGLISH
+========================= */
+filter_business: "Business",
+category_signature_food: "Signature Food",
+category_local_breakfast: "Local Breakfast",
+category_seafood: "Seafood",
+category_dessert: "Dessert",
+category_traditional: "Traditional",
+category_fruit: "Fruit",
+category_nature: "Nature",
+category_beach: "Beach",
+category_heritage: "Heritage",
+category_museum: "Museum",
+category_market: "Market",
+category_viewpoint: "Viewpoint",
+category_kopitiam: "Kopitiam",
+category_florist: "Florist",
+category_supermarket: "Supermarket",
+category_pharmacy: "Pharmacy",
+category_bakery: "Bakery",
+category_festival: "Festival",
+category_market_event: "Market Event",
+category_cultural_event: "Cultural Event",
+category_food_event: "Food Event"
   },
 
 "zh-cn": {
@@ -172,7 +198,33 @@ itemTags: "标签，用逗号分隔",
 saveItem: "保存项目",
 alertEnterItemName: "请输入项目名称",
 submitItemSuccess: "项目已提交，审核后会显示。",
-submitItemFailed: "提交项目失败。"
+submitItemFailed: "提交项目失败。",
+
+/* =========================
+   中文（简体）
+========================= */
+filter_business: "商家",
+category_signature_food: "招牌美食",
+category_local_breakfast: "本地早餐",
+category_seafood: "海鲜",
+category_dessert: "甜点",
+category_traditional: "传统",
+category_fruit: "水果",
+category_nature: "自然",
+category_beach: "海边",
+category_heritage: "文化遗产",
+category_museum: "博物馆",
+category_market: "市场",
+category_viewpoint: "观景点",
+category_kopitiam: "咖啡店",
+category_florist: "花店",
+category_supermarket: "超市",
+category_pharmacy: "药房",
+category_bakery: "面包店",
+category_festival: "节庆",
+category_market_event: "市集活动",
+category_cultural_event: "文化活动",
+category_food_event: "美食活动"
 },
 "zh-tw": {
   heroTag: "砂拉越 · 婆羅洲 · 馬來西亞",
@@ -259,7 +311,38 @@ itemTags: "標籤，用逗號分隔",
 saveItem: "儲存項目",
 alertEnterItemName: "請輸入項目名稱",
 submitItemSuccess: "項目已送出，審核後會顯示。",
-submitItemFailed: "送出項目失敗。"
+submitItemFailed: "送出項目失敗。",
+
+/* =========================
+   中文（繁體）
+========================= */
+
+filter_business: "商家",
+
+category_signature_food: "招牌美食",
+category_local_breakfast: "在地早餐",
+category_seafood: "海鮮",
+category_dessert: "甜點",
+category_traditional: "傳統",
+category_fruit: "水果",
+
+category_nature: "自然",
+category_beach: "海邊",
+category_heritage: "文化遺產",
+category_museum: "博物館",
+category_market: "市場",
+category_viewpoint: "觀景點",
+
+category_kopitiam: "咖啡店",
+category_florist: "花店",
+category_supermarket: "超市",
+category_pharmacy: "藥房",
+category_bakery: "麵包店",
+
+category_festival: "節慶",
+category_market_event: "市集活動",
+category_cultural_event: "文化活動",
+category_food_event: "美食活動"
 },
 ms: {
   heroTag: "Sarawak · Borneo · Malaysia",
@@ -346,7 +429,33 @@ itemTags: "Tag, pisahkan dengan koma",
 saveItem: "Simpan Item",
 alertEnterItemName: "Sila masukkan nama item",
 submitItemSuccess: "Item telah dihantar. Ia akan dipaparkan selepas semakan.",
-submitItemFailed: "Gagal menghantar item."
+submitItemFailed: "Gagal menghantar item.",
+
+/* =========================
+   BAHASA MELAYU
+========================= */
+filter_business: "Perniagaan",
+category_signature_food: "Makanan Ikonik",
+category_local_breakfast: "Sarapan Tempatan",
+category_seafood: "Makanan Laut",
+category_dessert: "Pencuci Mulut",
+category_traditional: "Tradisional",
+category_fruit: "Buah",
+category_nature: "Alam Semula Jadi",
+category_beach: "Pantai",
+category_heritage: "Warisan",
+category_museum: "Muzium",
+category_market: "Pasar",
+category_viewpoint: "Tempat Pemandangan",
+category_kopitiam: "Kopitiam",
+category_florist: "Kedai Bunga",
+category_supermarket: "Pasar Raya",
+category_pharmacy: "Farmasi",
+category_bakery: "Kedai Roti",
+category_festival: "Festival",
+category_market_event: "Acara Pasar",
+category_cultural_event: "Acara Budaya",
+category_food_event: "Acara Makanan"
 }
 };
 
