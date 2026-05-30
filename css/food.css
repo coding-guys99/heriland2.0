@@ -48,3 +48,54 @@
 
   color:#fffaf4;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+
+  margin-top: 2rem;
+}
+
+.pagination button {
+  min-width: 86px;
+  height: 38px;
+
+  border: 1px solid rgba(232,168,37,0.22);
+  background: rgba(255,255,255,0.04);
+
+  color: var(--cream);
+
+  font-family: "Crimson Pro", serif;
+  font-size: 0.9rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: var(--terra);
+  border-color: var(--terra);
+  color: #fffaf4;
+}
+
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  min-width: 70px;
+
+  text-align: center;
+
+  color: var(--gold);
+
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
