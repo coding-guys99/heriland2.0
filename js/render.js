@@ -1,4 +1,6 @@
 let currentTrailFilter = "all";
+let currentPage = 1;
+const itemsPerPage = 18;
 
 function normalizeFilter(value) {
   return String(value || "")
@@ -63,7 +65,9 @@ function renderTrailFilters() {
 }
 
 function setTrailFilter(type, event) {
+  
   currentTrailFilter = type;
+  currentPage = 1;
 
   document
     .querySelectorAll(".trail-filter")
@@ -120,9 +124,12 @@ function renderTrailList() {
   const trailList = document.getElementById("trail-list");
   if (!trailList) return;
 
-  const filteredItems = foods.filter(itemMatchesFilter);
+const filteredItems = foods.filter(itemMatchesFilter);
 
-  trailList.innerHTML = filteredItems.map((item, index) => {
+const start = (currentPage - 1) * itemsPerPage;
+const pagedItems = filteredItems.slice(start, start + itemsPerPage);
+
+  trailList.innerHTML = pagedItems.map((item, index) => {
     const realIndex = foods.indexOf(item);
 
     return `
@@ -142,4 +149,34 @@ function renderTrailList() {
       </li>
     `;
   }).join("");
+  renderPagination(filteredItems.length);
+}
+
+function renderPagination(totalItems) {
+  const box = document.getElementById("pagination");
+  if (!box) return;
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  if (totalPages <= 1) {
+    box.innerHTML = "";
+    return;
+  }
+
+  box.innerHTML = `
+    <button onclick="changePage(-1)" ${currentPage === 1 ? "disabled" : ""}>
+      Prev
+    </button>
+
+    <span>${currentPage} / ${totalPages}</span>
+
+    <button onclick="changePage(1)" ${currentPage === totalPages ? "disabled" : ""}>
+      Next
+    </button>
+  `;
+}
+
+function changePage(step) {
+  currentPage += step;
+  renderTrailList();
 }
