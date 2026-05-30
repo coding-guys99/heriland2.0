@@ -154,3 +154,12 @@ body.theme-light .pagination button {
   border-color: rgba(141,116,64,0.22);
   color: var(--cream);
 }
+
+body.theme-light .weather-box {
+  background: rgba(255,255,255,0.58);
+
+  border-color:
+    rgba(141,116,64,0.16);
+
+  color: var(--cream);
+}
