@@ -123,13 +123,21 @@ function itemMatchesFilter(item) {
 function injectAds(items) {
   const result = [];
 
+  let lastWasAd = false;
+
   items.forEach(item => {
+
     result.push({
       type: "item",
       data: item
     });
 
-    if (Math.random() < 0.18) {
+    const shouldInsertAd =
+      !lastWasAd &&
+      Math.random() < 0.08;
+
+    if (shouldInsertAd) {
+
       const randomAd =
         ads[Math.floor(Math.random() * ads.length)];
 
@@ -137,6 +145,12 @@ function injectAds(items) {
         type: "ad",
         data: randomAd
       });
+
+      lastWasAd = true;
+
+    } else {
+
+      lastWasAd = false;
     }
   });
 
