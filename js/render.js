@@ -144,34 +144,50 @@ function injectAds(items) {
 }
 
 function renderTrailList() {
-  
-  if (entry.type === "ad") {
-  const ad = entry.data;
-
-  return `
-    <li class="trail-ad-card fade-in">
-      <div class="trail-ad-badge">Sponsored</div>
-      <div class="trail-ad-emoji">${ad.image}</div>
-      <div class="trail-ad-title">${ad.title}</div>
-      <div class="trail-ad-desc">${ad.desc}</div>
-    </li>
-  `;
-}
-
-const item = entry.data;
-
   const trailList = document.getElementById("trail-list");
   if (!trailList) return;
 
-const filteredItems = foods.filter(itemMatchesFilter);
+  const filteredItems = foods.filter(itemMatchesFilter);
 
-const start = (currentPage - 1) * itemsPerPage;
-const pagedItems = filteredItems.slice(start, start + itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const pagedItems = filteredItems.slice(start, start + itemsPerPage);
 
-const mixedItems = injectAds(pagedItems);
+  const mixedItems = injectAds(pagedItems);
+
+  let itemNumber = start;
 
   trailList.innerHTML = mixedItems.map((entry, index) => {
+    if (entry.type === "ad") {
+      const ad = entry.data;
+
+      return `
+        <li
+          class="trail-ad-card fade-in"
+          style="animation-delay:${index * 0.05}s"
+        >
+          <div class="trail-ad-badge">
+            Sponsored
+          </div>
+
+          <div class="trail-ad-emoji">
+            ${ad.image}
+          </div>
+
+          <div class="trail-ad-title">
+            ${ad.title}
+          </div>
+
+          <div class="trail-ad-desc">
+            ${ad.desc}
+          </div>
+        </li>
+      `;
+    }
+
+    const item = entry.data;
     const realIndex = foods.indexOf(item);
+
+    itemNumber++;
 
     return `
       <li
@@ -179,7 +195,9 @@ const mixedItems = injectAds(pagedItems);
         onclick="openSheet(${realIndex})"
         style="animation-delay:${index * 0.05}s"
       >
-        <span class="trail-num">${String(start + index + 1).padStart(2, "0")}</span>
+        <span class="trail-num">
+          ${String(itemNumber).padStart(2, "0")}
+        </span>
 
         <div class="trail-info">
           <div class="trail-name">${item.name}</div>
@@ -190,6 +208,7 @@ const mixedItems = injectAds(pagedItems);
       </li>
     `;
   }).join("");
+
   renderPagination(filteredItems.length);
 }
 
