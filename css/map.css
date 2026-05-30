@@ -1,94 +1,206 @@
+/* =========================
+   MAP SECTION - HOME DISPLAY MAP
+========================= */
+
 .map-section {
+  position: relative;
+  padding: 5rem 1.5rem 3rem;
   background: var(--bark2);
-  padding: 0;
+  overflow: hidden;
 }
 
 .map-header {
-  padding: 2rem 1.5rem 1rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 0 1.5rem;
 }
 
 .map-container {
   position: relative;
   width: 100%;
-  height: 340px;
-  background: var(--jungle);
+  max-width: 1320px;
+  min-height: 720px;
+  margin: 0 auto;
+
+  border-radius: 32px;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(232,168,37,0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #10180d,
+      #161109
+    );
+
+  border: 1px solid rgba(232,168,37,0.08);
 }
 
-.map-svg {
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
+.map-copy {
+  position: absolute;
+  left: 4rem;
+  top: 5rem;
+  z-index: 4;
+  max-width: 360px;
+}
+
+.map-eyebrow {
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.map-title {
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+}
+
+.map-desc {
+  color: var(--cream2);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.sarawak-map-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.sarawak-map-img {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+
+  width: min(74%, 1100px);
+
+  transform: translateY(-50%);
+  z-index: 3;
+
+  filter:
+    drop-shadow(0 0 24px rgba(232,168,37,0.22))
+    drop-shadow(0 30px 60px rgba(0,0,0,0.5));
+}
+
+.map-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  right: -8%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232,168,37,0.14),
+      transparent 70%
+    );
+
+  z-index: 1;
+}
+
+.map-pin {
+  position: absolute;
+  z-index: 5;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  background: none;
+  border: none;
+
+  color: #f5ead8;
+
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.map-pin span {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  border: 2px solid rgba(255,255,255,0.65);
+
+  box-shadow:
+    0 0 0 6px rgba(232,168,37,0.10),
+    0 0 18px rgba(232,168,37,0.7);
+}
+
+/* Pin positions - adjust slowly */
+.kuching {
+  left: 21%;
+  bottom: 20%;
+}
+
+.sibu {
+  left: 49%;
+  bottom: 34%;
+}
+
+.mukah {
+  left: 51%;
+  top: 43%;
+}
+
+.bintulu {
+  left: 64%;
+  top: 36%;
+}
+
+.miri {
+  right: 18%;
+  top: 27%;
+}
+
+.limbang {
+  right: 8%;
+  top: 19%;
+}
+
+.lawas {
+  right: 4%;
+  top: 10%;
 }
 
 .map-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, var(--bark2) 100%);
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10,10,10,0.58),
+      transparent 42%
+    );
+
   pointer-events: none;
 }
 
-.mini-map-box {
-  position: relative;
-  height: 220px;
-  margin: 1rem 0;
-  border: 1px solid rgba(232,168,37,0.18);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    radial-gradient(circle at 30% 40%, rgba(232,168,37,0.16), transparent 28%),
-    radial-gradient(circle at 70% 55%, rgba(200,75,47,0.16), transparent 25%),
-    #1a1208;
-  background-size: 28px 28px, 28px 28px, auto, auto, auto;
-  overflow: hidden;
-}
-
-.mini-map-box::before {
-  content: "";
-  position: absolute;
-  left: 12%;
-  right: 8%;
-  top: 48%;
-  height: 2px;
-  background: rgba(245,234,216,0.18);
-  transform: rotate(-8deg);
-}
-
-.mini-map-box::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  bottom: 12%;
-  left: 58%;
-  width: 2px;
-  background: rgba(245,234,216,0.14);
-  transform: rotate(12deg);
-}
-
-.mini-map-pin {
-  position: absolute;
-  left: 48%;
-  top: 42%;
-  width: 42px;
-  height: 42px;
-  border: none;
-  background: rgba(245,234,216,0.92);
-  color: #111;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
-.mini-map-pin svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-}
+/* =========================
+   MAP PICKER - ADD SHOP LOCATION
+========================= */
 
 .map-picker-sheet {
   position: fixed;
@@ -99,12 +211,17 @@
 
 .map-picker-top {
   height: 56px;
+
   display: grid;
   grid-template-columns: 80px 1fr 80px;
   align-items: center;
+
   padding: 0 1rem;
+
   background: #0d0a05;
   color: var(--cream);
+
+  text-align: center;
 }
 
 .map-picker-top button {
@@ -112,6 +229,7 @@
   border: none;
   color: var(--gold);
   font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .real-map {
@@ -123,22 +241,30 @@
   position: fixed;
   left: 50%;
   top: 50%;
+
   width: 42px;
   height: 42px;
+
   transform: translate(-50%, -100%);
+
   z-index: 10000;
+
   color: #111;
   background: rgba(245,234,216,0.95);
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   pointer-events: none;
 }
 
 .map-center-pin svg {
   width: 22px;
   height: 22px;
+
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -146,21 +272,99 @@
 
 .map-address-card {
   position: fixed;
+
   left: 1rem;
   right: 1rem;
   bottom: 1rem;
+
   z-index: 10000;
+
   background: rgba(26,18,8,0.92);
+
   border: 1px solid rgba(232,168,37,0.25);
+
   padding: 1rem;
+
   color: var(--cream);
+
   backdrop-filter: blur(12px);
 }
 
 .map-address-label {
   color: var(--gold);
+
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+
   margin-bottom: 0.4rem;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.theme-light .map-section {
+  background: #e9dfd1;
+}
+
+body.theme-light .map-container {
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(141,116,64,0.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #efe8dc,
+      #ddd2c3
+    );
+}
+
+body.theme-light .map-title {
+  color: #2b2622;
+}
+
+body.theme-light .map-desc {
+  color: #5c544d;
+}
+
+body.theme-light .map-pin {
+  color: #2b2622;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+}
+
+body.theme-light .map-picker-sheet {
+  background: #f3eee5;
+}
+
+body.theme-light .map-picker-top {
+  background: #f7f2ea;
+  color: var(--cream);
+  border-bottom: 1px solid rgba(43,38,34,0.08);
+}
+
+body.theme-light .map-picker-top button {
+  color: var(--gold);
+}
+
+body.theme-light .map-center-pin {
+  background: #f7f2ea;
+  color: var(--cream);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+body.theme-light .map-address-card {
+  background: rgba(247,242,234,0.96);
+  border: 1px solid rgba(141,116,64,0.22);
+  color: var(--cream);
+}
+
+body.theme-light .map-address-label {
+  color: var(--gold);
+}
+
+body.theme-light #picked-address {
+  color: var(--cream2);
 }
