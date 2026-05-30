@@ -66,10 +66,6 @@ body.theme-light .shop-menu-card{
     rgba(141,116,64,0.14);
 }
 
-body.theme-light .map-section{
-  background:#e9dfd1;
-}
-
 body.theme-light .kumbu-divider{
   opacity:0.35;
 }
@@ -147,44 +143,6 @@ body.theme-light .address-map-btn{
 
 body.theme-light .address-map-btn svg{
   stroke: var(--cream);
-}
-
-body.theme-light .map-picker-sheet {
-  background: #f3eee5;
-}
-
-body.theme-light .map-picker-top {
-  background: #f7f2ea;
-  color: var(--cream);
-  border-bottom: 1px solid rgba(43,38,34,0.08);
-}
-
-body.theme-light .map-picker-top button {
-  color: var(--gold);
-}
-
-body.theme-light .map-center-pin {
-  background: #f7f2ea;
-  color: var(--cream);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-
-body.theme-light .map-center-pin svg {
-  stroke: var(--cream);
-}
-
-body.theme-light .map-address-card {
-  background: rgba(247,242,234,0.96);
-  border: 1px solid rgba(141,116,64,0.22);
-  color: var(--cream);
-}
-
-body.theme-light .map-address-label {
-  color: var(--gold);
-}
-
-body.theme-light #picked-address {
-  color: var(--cream2);
 }
 
 body.theme-light .shop-save-btn{
