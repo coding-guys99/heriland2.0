@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   renderTrailFilters();
   renderTrailList();
   bindSheetSwipe();
+  
+  loadWeather();
 });
 
 function lockBodyScroll() {
