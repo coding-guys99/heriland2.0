@@ -1,6 +1,6 @@
 async function loadWeather(city = "Kuching") {
 
-  const API_KEY = "你的APIKEY";
+  const API_KEY = "2bf2a548cb076cf7ea251d5cc6d4d8db";
 
   const url =
     `https://api.openweathermap.org/data/2.5/weather?q=${city},MY&units=metric&appid=${API_KEY}`;
