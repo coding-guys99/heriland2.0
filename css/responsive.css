@@ -482,17 +482,25 @@ and (orientation: landscape) {
     height: 820px;
   }
 
-  .food-scroll {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 1rem;
-    overflow: visible;
-    padding: 1.6rem 2.4rem;
-  }
+.food-scroll {
+  display: flex;
+  gap: 1rem;
 
-  .food-card {
-    width: 100%;
-  }
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 1.6rem 2.4rem;
+
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.food-card {
+  flex: 0 0 280px;
+  width: auto;
+
+  scroll-snap-align: start;
+}
 
   .food-card-img {
     height: 190px;
