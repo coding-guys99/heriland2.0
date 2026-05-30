@@ -110,7 +110,10 @@ category_bakery: "Bakery",
 category_festival: "Festival",
 category_market_event: "Market Event",
 category_cultural_event: "Cultural Event",
-category_food_event: "Food Event"
+category_food_event: "Food Event",
+
+submitShopSuccess: "Shop submitted. It will appear after review.",
+submitShopFailed: "Failed to submit shop."
   },
 
 "zh-cn": {
@@ -224,7 +227,10 @@ category_bakery: "面包店",
 category_festival: "节庆",
 category_market_event: "市集活动",
 category_cultural_event: "文化活动",
-category_food_event: "美食活动"
+category_food_event: "美食活动",
+
+submitShopSuccess: "店家已提交，审核后会显示。",
+submitShopFailed: "提交店家失败。"
 },
 "zh-tw": {
   heroTag: "砂拉越 · 婆羅洲 · 馬來西亞",
@@ -342,7 +348,10 @@ category_bakery: "麵包店",
 category_festival: "節慶",
 category_market_event: "市集活動",
 category_cultural_event: "文化活動",
-category_food_event: "美食活動"
+category_food_event: "美食活動",
+
+submitShopSuccess: "店家已送出，審核後會顯示。",
+submitShopFailed: "送出店家失敗。"
 },
 ms: {
   heroTag: "Sarawak · Borneo · Malaysia",
@@ -455,7 +464,10 @@ category_bakery: "Kedai Roti",
 category_festival: "Festival",
 category_market_event: "Acara Pasar",
 category_cultural_event: "Acara Budaya",
-category_food_event: "Acara Makanan"
+category_food_event: "Acara Makanan",
+
+submitShopSuccess: "Kedai telah dihantar. Ia akan dipaparkan selepas semakan.",
+submitShopFailed: "Gagal menghantar kedai."
 }
 };
 
