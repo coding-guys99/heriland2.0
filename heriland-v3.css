@@ -45,3 +45,6 @@
 .owner-card{align-items:flex-start;flex-wrap:wrap}
 .owner-card p{color:var(--muted);font-size:12px;margin:5px 0}
 .owner-card button{margin:3px}
+
+/* Quick business setup */
+.h-check{display:flex!important;align-items:center;gap:10px;flex-direction:row;font-size:13px;cursor:pointer}.h-check input{width:auto!important;flex:none;accent-color:var(--green)}#hWhatsappField[hidden],#hAdminTab[hidden]{display:none!important}.h-extra{border:1px solid var(--line);border-radius:12px;padding:13px;background:#f8faf7}.h-extra summary{font-size:13px;color:var(--green);font-weight:650;cursor:pointer}.h-extra-fields{display:grid;gap:14px;padding-top:17px}.onboard-form>.muted-note{margin:0;line-height:1.6}
