@@ -4,12 +4,13 @@ service cloud.firestore {
     function signedIn() { return request.auth != null; }
     function isAdmin() { return signedIn() && request.auth.token.herilandAdmin == true; }
     function validListing() {
-      return request.resource.data.keys().hasOnly(['ownerId','name','category','hometown','service_areas','description','phone','whatsapp','website','address','status','createdAt','updatedAt'])
+      return request.resource.data.keys().hasOnly(['ownerId','name','category','hometown','service_areas','description','phone','whatsapp','website','address','status','createdAt','updatedAt','reviewReason'])
         && request.resource.data.name is string
         && request.resource.data.name.size() >= 2
         && request.resource.data.name.size() <= 120
         && request.resource.data.service_areas is list
-        && request.resource.data.service_areas.size() <= 20;
+        && request.resource.data.service_areas.size() <= 20
+        && (!('reviewReason' in request.resource.data) || (request.resource.data.reviewReason is string && request.resource.data.reviewReason.size() <= 500));
     }
     match /heriland_profiles/{uid} {
       allow read: if signedIn() && request.auth.uid == uid;
@@ -43,7 +44,7 @@ service cloud.firestore {
         || (isAdmin()
           && request.resource.data.ownerId == resource.data.ownerId
           && request.resource.data.status in ['pending','approved','rejected']
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt']));
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt','reviewReason']));
       allow delete: if false;
     }
     match /{path=**} { allow read, write: if false; }
