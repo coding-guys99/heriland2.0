@@ -94,25 +94,30 @@ hLoadApproved();
 
 async function hReview(){
  if(!hInit()||!hAuth.currentUser)throw Error('Please log in');
- const claims=(await hAuth.currentUser.getIdTokenResult()).claims;
- if(claims.herilandAdmin!==true)throw Error('Administrator access is required');
- const snap=await hDb.collection('heriland_businesses').where('status','==','pending').limit(100).get();
- const entries=snap.docs.map(d=>({id:d.id,...d.data()}));
- $('businessAuthArea').innerHTML='<h2>Pending review ('+entries.length+')</h2>'+
- (entries.length?entries.map(b=>'<div class="owner-card"><div><strong>'+safe(b.name)+'</strong><p>'+safe(b.category)+' · '+safe(b.hometown)+'</p><p>'+safe(b.description||'')+'</p><small>Service areas: '+(b.service_areas||[]).map(safe).join(', ')+'</small></div><div><button class="btn small" data-h-review="'+b.id+'" data-decision="approved">Approve</button> <button class="btn small line" data-h-review="'+b.id+'" data-decision="rejected">Reject</button></div></div>').join(''):'<p class="muted-note">No pending submissions.</p>');
+ const token=await hAuth.currentUser.getIdTokenResult(true);
+ if(token.claims.herilandAdmin!==true)throw Error('Administrator access required');
+ const statuses=['pending','approved','rejected'];
+ const docs=await Promise.all(statuses.map(status=>hDb.collection('heriland_businesses').where('status','==',status).limit(100).get()));
+ const all=docs.flatMap((snap,i)=>snap.docs.map(doc=>({id:doc.id,...doc.data(),status:statuses[i]})));
+ const counts=Object.fromEntries(statuses.map((status,i)=>[status,docs[i].size]));
+ const selected=hAdminFilter||'pending';const entries=all.filter(item=>item.status===selected);
+ const root=$('businessAuthArea');if(!root)return;
+ root.innerHTML='<div class="h-page-head"><div><span class="eyebrow">HERILAND ADMIN</span><h1>Business Review</h1><p>Review submitted businesses before they are published.</p></div></div><div class="h-simple-summary">'+statuses.map(status=>'<span>'+counts[status]+' '+status+'</span>').join('')+'</div><div class="h-admin-tabs">'+statuses.map(status=>'<button class="h-admin-tab '+(selected===status?'active':'')+'" data-h-filter="'+status+'">'+status[0].toUpperCase()+status.slice(1)+'</button>').join('')+'</div><div class="h-panel">'+(entries.length?entries.map(item=>'<div class="h-admin-entry"><div><strong>'+safe(item.name)+'</strong><p>'+safe(item.category)+' · '+safe(item.hometown)+'</p><p>'+safe(item.description||'No description')+'</p><p>Serves: '+safe((item.service_areas||[]).join(', '))+'</p><p>Phone: '+safe(item.phone||'Not supplied')+' · WhatsApp: '+safe(item.whatsapp||'Not supplied')+'</p><p>Website: '+safe(item.website||'Not supplied')+' · Address: '+safe(item.address||'Not supplied')+'</p>'+hStatus(item)+'</div>'+(item.status==='pending'?'<div class="h-admin-actions"><button class="btn small" data-h-review="'+safe(item.id)+'" data-decision="approved">Approve</button><button class="btn small line" data-h-review="'+safe(item.id)+'" data-decision="rejected">Reject</button></div>':'')+'</div>').join(''):'<p class="muted-note">No '+safe(selected)+' businesses.</p>')+'</div>';
 }
+let hAdminFilter='pending';
 document.addEventListener('click',async e=>{
- const button=e.target.closest('[data-h-review]');
- if(!button)return;
- const decision=button.dataset.decision;
- if(!['approved','rejected'].includes(decision))return;
- if(!hAuth?.currentUser||!((await hAuth.currentUser.getIdTokenResult()).claims.herilandAdmin===true)){hInfo('Not authorized');return}
+ const filter=e.target.closest('[data-h-filter]');if(filter){hAdminFilter=filter.dataset.hFilter;try{await hReview()}catch(err){hInfo(err.message)}return}
+ const button=e.target.closest('[data-h-review]');if(!button)return;
+ const decision=button.dataset.decision;if(!['approved','rejected'].includes(decision))return;
+ if(!hAuth?.currentUser||!((await hAuth.currentUser.getIdTokenResult(true)).claims.herilandAdmin===true)){hInfo('Not authorized');return}
+ let reason='';if(decision==='rejected'){reason=window.prompt('Reason for rejection (shown to the business owner):','')||'';if(!reason.trim())return}
  button.disabled=true;
  try{
-  await hDb.collection('heriland_businesses').doc(button.dataset.hReview).update({status:decision,updatedAt:firebase.firestore.FieldValue.serverTimestamp()});
-  await hReview();await hLoadApproved();hInfo('Listing '+decision+'.');
+  const fields={status:decision,updatedAt:firebase.firestore.FieldValue.serverTimestamp()};
+  if(reason)fields.reviewReason=reason.trim();
+  await hDb.collection('heriland_businesses').doc(button.dataset.hReview).update(fields);
+  await hReview();await hLoadApproved();hInfo('Business '+decision+'.');
  }catch(err){button.disabled=false;hInfo(err.message)}
 });
-
 // Restore account view when Firebase finishes checking persisted login.
 if(hInit())hAuth.onAuthStateChanged(user=>{if(state.page==='register'){if(user)hDashboard().catch(err=>hInfo(err.message));else hRerender();}});
