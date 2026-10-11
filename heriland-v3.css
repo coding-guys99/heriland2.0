@@ -77,3 +77,5 @@
 .h-main .onboard-form{max-width:650px}.h-main .onboard-form label{display:grid}.h-main .h-panel>.onboard-form{margin:0}
 @media(max-width:880px){.h-workspace{grid-template-columns:1fr;gap:18px;padding-top:16px}.h-sidebar{min-height:0;display:flex;flex-direction:row;overflow-x:auto;padding:8px;gap:5px}.h-sidebar-label,.h-signout{display:none}.h-nav{width:auto;flex-shrink:0;white-space:nowrap;padding:11px}.h-nav span{font-size:16px}.h-stats{gap:9px}.h-stat{padding:13px;gap:9px}}
 @media(max-width:600px){.h-page-head{align-items:flex-start;flex-direction:column}.h-page-head .btn{width:100%}.h-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.h-stat{display:block;text-align:center;padding:13px 7px}.h-stat>span{width:34px;height:34px;margin:0 auto 9px;font-size:18px}.h-stat small{font-size:10px}.h-stat strong{font-size:23px}.h-next{grid-template-columns:1fr}.h-panel{padding:15px}.h-business-row{flex-wrap:wrap}.h-business-info{flex-basis:calc(100% - 64px)}.h-business-row .h-status{margin-left:62px}.h-sidebar{margin:0 -10px}}
+
+#hOtherCategoryField[hidden]{display:none!important}
