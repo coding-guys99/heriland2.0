@@ -63,7 +63,7 @@ function hEdit(b={}){
 }
 async function hDashboard(){
  if(!hInit())return;const u=hAuth.currentUser;if(!u){hRerender();return}
- hAdminClaim=(await u.getIdTokenResult()).claims.herilandAdmin===true;
+ try{const access=await hDb.collection('heriland_admins').doc(u.uid).get();hAdminClaim=access.exists}catch(e){hAdminClaim=false;console.warn('Admin access check failed',e)}
  try{const p=await hDb.collection('heriland_profiles').doc(u.uid).get();hProfile=p.exists?p.data():{}}catch(e){console.warn('Profile unavailable',e);hProfile={}}
  const snap=await hDb.collection('heriland_businesses').where('ownerId','==',u.uid).get();hMine=snap.docs.map(d=>({id:d.id,...d.data()}));hRerender();
 }
@@ -94,8 +94,8 @@ hLoadApproved();
 
 async function hReview(){
  if(!hInit()||!hAuth.currentUser)throw Error('Please log in');
- const token=await hAuth.currentUser.getIdTokenResult(true);
- if(token.claims.herilandAdmin!==true)throw Error('Administrator access required');
+ const access=await hDb.collection('heriland_admins').doc(hAuth.currentUser.uid).get({source:'server'});
+ if(!access.exists)throw Error('Administrator access required');
  const statuses=['pending','approved','rejected'];
  const docs=await Promise.all(statuses.map(status=>hDb.collection('heriland_businesses').where('status','==',status).limit(100).get()));
  const all=docs.flatMap((snap,i)=>snap.docs.map(doc=>({id:doc.id,...doc.data(),status:statuses[i]})));
@@ -109,7 +109,7 @@ document.addEventListener('click',async e=>{
  const filter=e.target.closest('[data-h-filter]');if(filter){hAdminFilter=filter.dataset.hFilter;try{await hReview()}catch(err){hInfo(err.message)}return}
  const button=e.target.closest('[data-h-review]');if(!button)return;
  const decision=button.dataset.decision;if(!['approved','rejected'].includes(decision))return;
- if(!hAuth?.currentUser||!((await hAuth.currentUser.getIdTokenResult(true)).claims.herilandAdmin===true)){hInfo('Not authorized');return}
+ if(!hAuth?.currentUser){hInfo('Not authorized');return}const allow=await hDb.collection('heriland_admins').doc(hAuth.currentUser.uid).get({source:'server'});if(!allow.exists){hInfo('Not authorized');return}
  let reason='';if(decision==='rejected'){reason=window.prompt('Reason for rejection (shown to the business owner):','')||'';if(!reason.trim())return}
  button.disabled=true;
  try{
