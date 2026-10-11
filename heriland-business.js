@@ -49,7 +49,7 @@ async function hLoadApproved(){
   const snap=await hDb.collection('heriland_businesses').where('status','==','approved').limit(100).get();
   approvedListings=snap.docs.map(d=>{
    const x=d.data();
-   return {id:d.id,name:x.name||'',cat:x.category||'',area:x.hometown||'',serves:x.service_areas||[],desc:x.description||'',whatsapp:x.whatsapp||'',img:'https://placehold.co/600x400/f1f5f0/245540?text=Heriland+Business'};
+   return {id:d.id,name:x.name||'',cat:x.category||'',area:x.hometown||'',serves:x.service_areas||[],desc:x.description||'',whatsapp:x.whatsapp||'',phone:x.phone||'',img:'https://placehold.co/600x400/f1f5f0/245540?text=Heriland+Business'};
   });
   if(state.page==='explore')render();
  }catch(err){console.warn('Unable to load approved listings',err)}
