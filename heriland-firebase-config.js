@@ -1,0 +1,1 @@
+window.HERILAND_FIREBASE_CONFIG={apiKey:"AIzaSyCvsLGPfPI-LpHyqLLGk21l7bHAMYzIvG0",authDomain:"imeet-prototype.firebaseapp.com",projectId:"imeet-prototype",appId:"1:1038147039035:web:8c642bee6c268f0c8f511e"};
