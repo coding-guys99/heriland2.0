@@ -2,7 +2,6 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function signedIn() { return request.auth != null; }
-    function verifiedUser() { return signedIn() && request.auth.token.email_verified == true; }
     function isAdmin() { return signedIn() && request.auth.token.herilandAdmin == true; }
     function validListing() {
       return request.resource.data.keys().hasOnly(['ownerId','name','category','hometown','service_areas','description','phone','whatsapp','website','address','status','createdAt','updatedAt'])
@@ -16,12 +15,12 @@ service cloud.firestore {
       allow get, list: if resource.data.status == 'approved'
         || (signedIn() && resource.data.ownerId == request.auth.uid)
         || isAdmin();
-      allow create: if verifiedUser()
+      allow create: if signedIn()
         && validListing()
         && request.resource.data.ownerId == request.auth.uid
         && request.resource.data.status == 'pending';
       allow update: if
-        (verifiedUser()
+        (signedIn()
           && resource.data.ownerId == request.auth.uid
           && request.resource.data.ownerId == resource.data.ownerId
           && request.resource.data.status == 'pending'
