@@ -46,7 +46,8 @@ function hEdit(b={}){
  '<input type="hidden" name="id" value="'+v('id')+'">'+
  '<label>Account email (private)<input class="field" value="'+safe(hAuth?.currentUser?.email||'')+'" disabled></label>'+
  '<label>Business name *<input class="field" name="name" required maxlength="120" minlength="2" value="'+v('name')+'" placeholder="Your business name"></label>'+
- '<label>Category *<select class="select" name="category">'+cats.map(c=>'<option '+(b.category===c[0]?'selected':'')+'>'+safe(c[0])+'</option>').join('')+'</select></label>'+
+ '<label>Category *<select id="hCategory" class="select" name="category">'+cats.map(c=>'<option '+(b.category===c[0]?'selected':'')+'>'+safe(c[0])+'</option>').join('')+'<option value="Other" '+(b.category==='Other'||(b.category&&!cats.some(c=>c[0]===b.category))?'selected':'')+'>Other</option></select></label>'+
+ '<label id="hOtherCategoryField" '+(b.category==='Other'||(b.category&&!cats.some(c=>c[0]===b.category))?'':'hidden')+'>Specify category *<input id="hOtherCategory" class="field" name="other_category" maxlength="80" value="'+safe(b.category&&!cats.some(c=>c[0]===b.category)?b.category:'')+'" placeholder="e.g. Pet grooming"></label>'+
  '<label>Based in *<select id="hTown" class="select" name="hometown">'+areas.map(t=>'<option '+(town===t?'selected':'')+'>'+safe(t)+'</option>').join('')+'</select></label>'+
  '<label>Customer contact number *<input class="field" name="phone" type="tel" required inputmode="tel" maxlength="30" value="'+safe(b.phone||hProfile.phone||'')+'" placeholder="+60 12 345 6789"></label>'+
  '<label class="h-check"><input type="checkbox" id="hSameWhatsapp" name="same_whatsapp" '+(whatsappSame?'checked':'')+'> Use this number for WhatsApp</label>'+
