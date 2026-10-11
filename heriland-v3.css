@@ -99,3 +99,13 @@
 .h-add-primary{margin-top:15px;padding:10px 17px}
 .h-account-link{display:flex;justify-content:space-between;align-items:center;color:#65786b;font-size:13px;padding:14px 3px}
 @media(max-width:880px){.h-sidebar{background:transparent;border:0;padding:5px 0}.h-nav.active{box-shadow:inset 0 -2px 0 var(--green)}}
+
+/* Admin review: quiet, table-like moderation */
+.h-admin-tabs{display:flex;gap:20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.h-admin-tab{border:0;background:none;padding:13px 2px;color:var(--muted);font-size:13px;font-weight:600;text-transform:capitalize}
+.h-admin-tab.active{color:var(--green);box-shadow:inset 0 -2px 0 var(--green)}
+.h-admin-entry{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;border-bottom:1px solid var(--line)}
+.h-admin-entry:last-child{border-bottom:0}
+.h-admin-entry strong{font-size:15px}.h-admin-entry p{margin:7px 0;font-size:12px;line-height:1.6}
+.h-admin-actions{display:flex;gap:10px;flex-shrink:0}
+@media(max-width:650px){.h-admin-entry{display:block}.h-admin-actions{margin-top:16px}}
