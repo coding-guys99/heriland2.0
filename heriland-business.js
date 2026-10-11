@@ -87,7 +87,7 @@ async function hLoadApproved(){
    const x=d.data();
    return {id:d.id,name:x.name||'',cat:x.category||'',area:x.hometown||'',serves:x.service_areas||[],desc:x.description||'',whatsapp:x.whatsapp||'',phone:x.phone||'',img:'https://placehold.co/600x400/f1f5f0/245540?text=Heriland+Business'};
   });
-  if(state.page==='explore')render();
+  if(state.page==='explore'||state.page==='home')render();
  }catch(err){console.warn('Unable to load approved listings',err)}
 }
 hLoadApproved();
