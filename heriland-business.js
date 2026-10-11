@@ -8,3 +8,16 @@ function hEdit(b={}){let v=k=>safe(b[k]||'');return '<form id="hListing" class="
 async function hDashboard(){if(!hInit())return;const u=hAuth.currentUser;if(!u){$('businessAuthArea').innerHTML=hAccount('login');return}const s=await hDb.collection('heriland_businesses').where('ownerId','==',u.uid).get();hMine=s.docs.map(d=>({id:d.id,...d.data()}));$('businessAuthArea').innerHTML='<h2>My businesses</h2><p class="muted-note">'+safe(u.email)+'</p>'+hMine.map(b=>'<div class="owner-card"><strong>'+safe(b.name)+'</strong><span class="pill">'+safe(b.status)+'</span><button class="btn small line" data-h-edit="'+b.id+'">Edit</button></div>').join('')+'<button class="btn" id="hNew">+ Add business</button> <button class="btn line" id="hLogout">Log out</button>'}
 document.addEventListener('click',async e=>{const tab=e.target.closest('[data-business-tab]');if(tab){if(tab.dataset.businessTab==='manage'){try{await hDashboard()}catch(x){hInfo(x.message)}}else $('businessAuthArea').innerHTML=hAccount(tab.dataset.businessTab)}if(e.target.id==='hNew')$('businessAuthArea').innerHTML=hEdit();const edit=e.target.closest('[data-h-edit]');if(edit){const b=hMine.find(x=>x.id===edit.dataset.hEdit);if(b)$('businessAuthArea').innerHTML=hEdit(b)}if(e.target.id==='hLogout'){await hAuth.signOut();$('businessAuthArea').innerHTML=hAccount('login')}});
 document.addEventListener('submit',async e=>{if(!['hAccount','hListing'].includes(e.target.id))return;e.preventDefault();if(!hInit()){hInfo('Cloud connection unavailable');return}const v=Object.fromEntries(new FormData(e.target).entries());try{if(e.target.id==='hAccount'){if(v.mode==='signup')await hAuth.createUserWithEmailAndPassword(v.email,v.password);else await hAuth.signInWithEmailAndPassword(v.email,v.password);await hDashboard();hInfo('Signed in. You can manage your business.')}else{const u=hAuth.currentUser;if(!u)throw Error('Please log in first');const b={ownerId:u.uid,name:v.name.trim(),category:v.category,hometown:v.hometown,service_areas:v.service_areas.split(',').map(s=>s.trim()).filter(Boolean),description:v.description.trim(),phone:v.phone.trim(),whatsapp:v.whatsapp.trim(),website:v.website.trim(),address:v.address.trim(),status:'pending',updatedAt:firebase.firestore.FieldValue.serverTimestamp()};if(v.id){const old=hMine.find(x=>x.id===v.id&&x.ownerId===u.uid);if(!old)throw Error('Business not found');await hDb.collection('heriland_businesses').doc(v.id).update(b)}else await hDb.collection('heriland_businesses').add({...b,createdAt:firebase.firestore.FieldValue.serverTimestamp()});await hDashboard();hInfo('Saved. Pending Heriland review.')}}catch(x){hInfo(x.message)}});
+
+async function hLoadApproved(){
+ if(!hInit())return;
+ try{
+  const snap=await hDb.collection('heriland_businesses').where('status','==','approved').limit(100).get();
+  approvedListings=snap.docs.map(d=>{
+   const x=d.data();
+   return {id:d.id,name:x.name||'',cat:x.category||'',area:x.hometown||'',serves:x.service_areas||[],desc:x.description||'',whatsapp:x.whatsapp||'',img:'https://placehold.co/600x400/f1f5f0/245540?text=Heriland+Business'};
+  });
+  if(state.page==='explore')render();
+ }catch(err){console.warn('Unable to load approved listings',err)}
+}
+hLoadApproved();
