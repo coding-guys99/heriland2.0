@@ -48,3 +48,32 @@
 
 /* Quick business setup */
 .h-check{display:flex!important;align-items:center;gap:10px;flex-direction:row;font-size:13px;cursor:pointer}.h-check input{width:auto!important;flex:none;accent-color:var(--green)}#hWhatsappField[hidden],#hAdminTab[hidden]{display:none!important}.h-extra{border:1px solid var(--line);border-radius:12px;padding:13px;background:#f8faf7}.h-extra summary{font-size:13px;color:var(--green);font-weight:650;cursor:pointer}.h-extra-fields{display:grid;gap:14px;padding-top:17px}.onboard-form>.muted-note{margin:0;line-height:1.6}
+
+/* Heriland member workspace */
+.h-workspace{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;min-height:73vh;padding-top:30px;padding-bottom:80px}
+.h-sidebar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 12px;display:flex;flex-direction:column;gap:5px;align-self:start;min-height:490px}
+.h-sidebar-label{padding:12px;font-size:10px;letter-spacing:1.8px;font-weight:800;color:var(--muted)}
+.h-nav{width:100%;background:transparent;color:#466052;border:0;text-align:left;border-radius:11px;padding:13px 12px;display:flex;gap:13px;align-items:center;font-size:13px;font-weight:650}
+.h-nav span{font-size:19px;min-width:22px;text-align:center}.h-nav:hover,.h-nav.active{background:#e8f4eb;color:var(--green)}
+.h-signout{margin-top:auto;border-top:1px solid var(--line);border-radius:0;padding-top:21px}
+.h-main{min-width:0}.h-page-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:6px 0 23px}
+.h-page-head h1{font-size:clamp(26px,3vw,37px);letter-spacing:-1.2px;margin:7px 0}
+.h-page-head p{font-size:13px;color:var(--muted);margin:0}
+.h-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.h-stat{display:flex;gap:14px;align-items:center;background:white;border:1px solid var(--line);padding:22px;border-radius:16px}
+.h-stat>span{background:#e6f3e9;color:var(--green);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:23px}
+.h-stat small{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}.h-stat strong{font-size:27px}
+.h-section-title{font-size:20px;margin-bottom:14px}.h-next{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:24px}
+.h-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+.h-panel h3{font-size:16px;margin:0 0 10px}.h-panel p{color:var(--muted);font-size:13px;line-height:1.7}
+.h-panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}
+.h-panel-head h2{font-size:19px;margin:0}.h-link{border:0;background:transparent;color:var(--green);font-weight:750}
+.h-business-row{display:flex;gap:13px;align-items:center;padding:16px 0;border-top:1px solid var(--line)}
+.h-business-info{flex:1;min-width:0}.h-business-info strong{display:block;font-size:14px}.h-business-info small{display:block;margin-top:5px;font-size:12px;color:var(--muted)}
+.h-business-icon{background:#e8f4eb;color:var(--green);font-size:23px;display:grid;place-items:center;border-radius:13px;width:50px;height:50px;flex-shrink:0}
+.h-status{font-size:11px;font-weight:700;white-space:nowrap;padding:7px 10px;border-radius:30px;background:#fff0da;color:#975909}
+.h-status.approved{background:#dff3e8;color:#086842}.h-status.rejected{background:#ffefea;color:#a23a32}
+.h-empty{text-align:center;padding:40px 15px}.h-empty .h-business-icon{margin:0 auto}.h-empty h3{margin-top:17px}
+.h-main .onboard-form{max-width:650px}.h-main .onboard-form label{display:grid}.h-main .h-panel>.onboard-form{margin:0}
+@media(max-width:880px){.h-workspace{grid-template-columns:1fr;gap:18px;padding-top:16px}.h-sidebar{min-height:0;display:flex;flex-direction:row;overflow-x:auto;padding:8px;gap:5px}.h-sidebar-label,.h-signout{display:none}.h-nav{width:auto;flex-shrink:0;white-space:nowrap;padding:11px}.h-nav span{font-size:16px}.h-stats{gap:9px}.h-stat{padding:13px;gap:9px}}
+@media(max-width:600px){.h-page-head{align-items:flex-start;flex-direction:column}.h-page-head .btn{width:100%}.h-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.h-stat{display:block;text-align:center;padding:13px 7px}.h-stat>span{width:34px;height:34px;margin:0 auto 9px;font-size:18px}.h-stat small{font-size:10px}.h-stat strong{font-size:23px}.h-next{grid-template-columns:1fr}.h-panel{padding:15px}.h-business-row{flex-wrap:wrap}.h-business-info{flex-basis:calc(100% - 64px)}.h-business-row .h-status{margin-left:62px}.h-sidebar{margin:0 -10px}}
